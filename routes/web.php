@@ -11,12 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get( '/', function () {
+    return view( 'welcome' );
+} );
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get( '/home', 'HomeController@index' )->name( 'home' );
 
-
+Route::get( '/mongo/add', function () {
+    return \App\Data::create([
+        'name'    => 'Eric Van Johnson',
+        'phone'   => '8588153597',
+        'company' => 'DiegoDev Group LLC',
+        'title'   => 'Waste Of Space'
+    ]);
+} );
