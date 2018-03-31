@@ -27,3 +27,14 @@ Route::get( '/mongo/add', function () {
         'title'   => 'Waste Of Space'
     ]);
 } );
+
+Route::get('/logout', function() {
+    Auth::logout();
+    return Redirect::home();
+});
+
+Route::get('/login', 'IndexController@login');
+
+Route::get('/auth0/callback', '\Auth0\Login\Auth0Controller@callback');
+
+Auth::routes();
