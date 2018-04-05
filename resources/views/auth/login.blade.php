@@ -13,20 +13,20 @@
                     <div class="border-teal p-8 border-t-12 bg-white mb-6 rounded-lg shadow-lg">
                         <div class="mb-4">
                             <label class="font-bold text-grey-darker block mb-2">{{ __('E-Mail Address') }}</label>
-                            <input id="email" type="email" class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow {{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email" required autofocus>
+                            <input id="email" type="email" class="block appearance-none w-full bg-white border {{ $errors->has('email') ? ' border-red-light hover:border-red' : ' border-grey-light hover:border-grey ' }} px-2 py-2 rounded shadow" placeholder="Email" required autofocus>
                             @if ($errors->has('email'))
-                                <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                <div class="text-red-light px-4 py-2 relative" role="alert">
+                                    <span class="font-bold"> <strong>{{ $errors->first('email') }}</strong> </span>
+                                </div>
                             @endif
                         </div>
                         <div class="mb-4">
                             <label class="font-bold text-grey-darker block mb-2">{{ __('Password') }}</label>
-                            <input id="password" type="password" class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password" required>
+                            <input id="password" type="password" class="block appearance-none w-full bg-white border {{ $errors->has('email') ? ' border-red-light hover:border-red' : ' border-grey-light hover:border-grey ' }}  px-2 py-2 rounded shadow {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password" required>
                             @if ($errors->has('password'))
-                                <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                <div class="text-red-light px-4 py-2 relative" role="alert">
+                                    <span class="font-bold"> <strong>{{ $errors->first('password') }}</strong> </span>
+                                </div>
                             @endif
                         </div>
                         <div class="flex items-center justify-between">
@@ -49,7 +49,7 @@
 
 
                 <div class="text-center">
-                    <p class="text-grey-dark text-sm">Don't have an account? <a href="#" class="no-underline text-blue font-bold">Create an Account</a>.</p>
+                    <p class="text-grey-dark text-sm">Don't have an account? <a href="/register" class="no-underline text-blue font-bold">Create an Account</a>.</p>
                 </div>
             </div>
         </div>
