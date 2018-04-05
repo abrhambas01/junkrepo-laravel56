@@ -16,7 +16,7 @@
                             <input id="email" type="email" class="block appearance-none w-full bg-white border {{ $errors->has('email') ? ' border-red-light hover:border-red' : ' border-grey-light hover:border-grey ' }} px-2 py-2 rounded shadow" placeholder="Email" required autofocus>
                             @if ($errors->has('email'))
                                 <div class="text-red-light px-4 py-2 relative" role="alert">
-                                    <span class="font-bold"> <strong>{{ $errors->first('email') }}</strong> </span>
+                                    <span>{{ $errors->first('email') }} </span>
                                 </div>
                             @endif
                         </div>
@@ -25,7 +25,7 @@
                             <input id="password" type="password" class="block appearance-none w-full bg-white border {{ $errors->has('email') ? ' border-red-light hover:border-red' : ' border-grey-light hover:border-grey ' }}  px-2 py-2 rounded shadow {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password" required>
                             @if ($errors->has('password'))
                                 <div class="text-red-light px-4 py-2 relative" role="alert">
-                                    <span class="font-bold"> <strong>{{ $errors->first('password') }}</strong> </span>
+                                    <span>{{ $errors->first('password') }}</span>
                                 </div>
                             @endif
                         </div>
