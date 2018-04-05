@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
+let tailwindcss = require('tailwindcss');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,6 +13,18 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-    .postCss('resources/assets/css/main.css', 'public/css', [
-        tailwindcss('tailwind-config.js'),
-    ]);
+    .sass('resources/assets/sass/index.sass', 'public/css/app.css')
+    .options({
+        processCssUrls: false,
+        postCss: [ tailwindcss('./tailwind.js') ],
+    })
+    .browserSync({
+         proxy: '127.0.0.1:8000',
+        // https: true,
+        // host: 'junkrepo-laravel56.dev',
+        // proxy: 'junkrepo-laravel56.dev',
+        // https: {
+        //     key: "/Users/eric/.valet/Certificates/junkrepo-laravel56.dev.key",
+        //     cert: "/Users/eric/.valet/Certificates/junkrepo-laravel56.dev.crt"
+        // }
+    });
