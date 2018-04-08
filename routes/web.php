@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get( '/home', 'HomeController@index' )->name( 'home' );
 
+// Mongo Experiment
 Route::get( '/mongo/add', function () {
     return \App\Data::create([
         'name'    => 'Eric Van Johnson',
@@ -26,7 +27,20 @@ Route::get( '/mongo/add', function () {
         'company' => 'DiegoDev Group LLC',
         'title'   => 'Waste Of Space'
     ]);
-} );
+});
+
+Route::get( '/mongo/find', function () {
+    return \App\Data::where('name', 'Eric Van Johnson')->first();
+});
+
+Route::get( '/mongo/update', function () {
+    $user = \App\Data::where('name', 'Eric Van Johnson')->first();
+    $user->address = '1234 Somewhere USA';
+    $user->save();
+
+    return 'Record updated';
+});
+// Mongo Experiment End
 
 Route::get('/logout', function() {
     Auth::logout();

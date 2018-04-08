@@ -8,4 +8,6 @@ class Data extends Eloquent
 {
     //protected $collection = 'data_collection';
     protected $connection = 'mongodb';
+
+    protected $guarded = [];
 }
