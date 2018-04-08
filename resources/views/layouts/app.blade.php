@@ -29,7 +29,7 @@
             <header class="absolute pin-t pin-l w-full py-4">
                 <div class="flex items-center justify-between px-8">
                 <span class="text-2xl tracking-tight font-semibold">
-                    <a class="navbar-brand" href="{{ url('/') }}"> {{ config('app.name', 'Laravel') }}</a>
+                    <a class="navbar-brand text-lg leading-normal text-blue hover:text-blue-dark no-underline ml-8" href="{{ url('/') }}"> {{ config('app.name', 'Laravel') }}</a>
                 </span>
                     <div class="">
                         <div class="flex items-center">

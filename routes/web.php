@@ -47,7 +47,13 @@ Route::get('/logout', function() {
     return Redirect::home();
 });
 
-Route::view('templates', 'templates');
+
+// Tailwind Examples
+Route::view('templates', 'tailwind.templates');
+Route::view('templates2', 'tailwind.template2');
+Route::view('facebook', 'tailwind.facebook');
+Route::view('coinbase', 'tailwind.coinbase');
+
 
 Route::get('/login', 'IndexController@login');
 
