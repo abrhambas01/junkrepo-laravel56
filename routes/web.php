@@ -47,6 +47,8 @@ Route::get('/logout', function() {
     return Redirect::home();
 });
 
+Route::view('templates', 'templates');
+
 Route::get('/login', 'IndexController@login');
 
 Route::get('/auth0/callback', '\Auth0\Login\Auth0Controller@callback');
