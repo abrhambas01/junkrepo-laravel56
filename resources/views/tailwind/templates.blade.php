@@ -627,7 +627,7 @@
 
 
 
-    <div class="containe bg-grey-lighter p-8">
+    <div class="contain bg-grey-lighter p-8">
         <div class="sm:flex mb-4">
             <div class="sm:w-1/4 h-auto">
                 <div class="text-orange mb-2">Orange</div>
